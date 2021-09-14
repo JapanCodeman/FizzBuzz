@@ -17,14 +17,25 @@ it could run up to 1000 or a million, etc.
 '''
 
 
-def fizz_buzz(num1 = 1, num2 = 101):
+def fizz_buzz(num1=1, num2=100):
+    num2 += 1
+    num_list = []
+    fizz_buzz_list = []
     for i in range(num1, num2):
-        if (i / 3) == 1:
-            print("Fizz")
-        elif (i / 5) == 1:
-            print("Buzz")
-        elif (i / (3 * 5)) == 1:
-            print("FizzBuzz")
+        num_list.append(i)
+
+    for i in num_list:
+        if i % 3 == 0 and i % 5 == 0:
+            fizz_buzz_list.append("fizzbuzz")
+        elif i % 5 == 0:
+            fizz_buzz_list.append("buzz")
+        elif i % 3 == 0:
+            fizz_buzz_list.append("fizz")
+        else:
+            fizz_buzz_list.append(i)
+
+    for i in fizz_buzz_list:
+        print(i)
 
 
-fizz_buzz()
+fizz_buzz(1, 5)
